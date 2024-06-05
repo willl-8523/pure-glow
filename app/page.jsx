@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>Pure Glow</h1>
-    </div>
-  );
+import Banner from '@/components/banner/Banner';
+
+export default function HomePage() {
+  return <Banner />;
 }
