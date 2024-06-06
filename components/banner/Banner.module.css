@@ -1,12 +1,57 @@
 .banner {
+  position: relative;
   height: 100vh;
+
+  padding: 0 5%;
+
+  background-image: url("/images/banner__img.svg");
+  background-repeat: no-repeat;
+  background-position: top 0% left 50%;
   overflow: hidden;
 }
 
-.banner img:first-child {
+.banner__content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-  object-position: center 0%;
+  line-height: var(--size-15);
+}
+
+.banner__slider h1,
+.banner__slider p {
+  font-size: var(--size-9);
+}
+
+.banner__slider p {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.banner__navigation {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+
+  width: 100%;
+}
+
+.banner__navigation span {
+  display: block;
+  width: 35px;
+  height: 35px;
+
+  margin-right: var(--size-2);
+
+  border-radius: 50%;
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-white-35);
+  cursor: pointer;
+}
+
+.banner__navigation .active {
+  background-color: var(--color-gray);
 }
