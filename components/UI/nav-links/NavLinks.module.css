@@ -1,20 +1,22 @@
 .nav__links {
-  list-style: none;
   display: flex;
   align-items: baseline;
-  
+
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .nav__links li {
   position: relative;
+
   margin: 0 var(--size-4);
 }
 
 .nav__links li:hover {
   transform: scale(1.05);
-  transition: transform .2s ease;
+  transition: transform .1s ease;
 }
 
 .nav__links a {
@@ -33,6 +35,74 @@
   margin-right: 5px;
 
   background: var(--color-gray);
+}
+
+.search {
+  position: relative;
+
+  height: 50px;
+}
+
+.search input {
+  height: 100%;
+  width: 50px;
+
+  padding-right: var(--size-4);
+
+  font-size: var(--size-4);
+  border: 0;
+  background-color: transparent;
+  color: transparent;
+  transition: width 0.3s ease;
+}
+
+.search input::placeholder {
+  color: transparent;
+}
+
+.search button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 50px;
+
+  font-size: var(--size-4);
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.search button:focus,
+.search input:focus {
+  outline: none;
+}
+
+/* j'agis sur l'input lorsque .search à la classe active*/
+.search.expanded input {
+  width: 200px;
+
+  border-bottom: 1px solid var(--color-gray);
+  color: var(--color-gray);
+}
+
+.search.expanded input::placeholder {
+  color: var(--color-white-35);
+}
+
+/* j'agis sur le button lorsque .search à la classe active*/
+.search.expanded button {
+  transform: translateX(172px);
+}
+
+.isExpanded:hover {
+  transform: scale(1) !important;
 }
 
 @media (min-width: 768px) {
